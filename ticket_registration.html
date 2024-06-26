@@ -60,13 +60,16 @@
     <h2>Ticket Registration</h2>
     <form id="ticket-form" onsubmit="return handleTicketSubmission(event)">
         <input type="text" placeholder="Name" required>
+        <input type="text" placeholder="from" required>
         <input type="text" placeholder="Destination" required>
         <input type="date" required>
+        <input type="time" required>
         <select required>
             <option value="">Select Class</option>
             <option value="first">First Class</option>
             <option value="second">Second Class</option>
-            <option value="third">Third Class</option>
+            <option value="General">General class</option>
+            
         </select>
         <input type="number" placeholder="Number of Seats" required>
         <button type="submit">Register Ticket</button>
