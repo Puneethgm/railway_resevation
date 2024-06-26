@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Department Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://assets.traveltriangle.com/blog/wp-content/uploads/2015/08/andaman-and-nicobar-islands-tourism-attractions-4.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .box {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        .box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .box h2 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .box p {
+            color: #666;
+        }
+        .box button{
+            margin: 20px 0;
+            font-size:18px;
+        }
+        .nav-links {
+            margin-top: 20px;
+            position: relative;
+        }
+        .nav-links a {
+            text-decoration: 50px;
+            color: #15f10d;
+            margin: 0 10px;
+        }
+        .logout {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .navi a{
+            text-decoration: 50px;
+            color: rgb(234, 4, 4);
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Welcome to the Indian Railways</h1>
+<div class="navi">
+    <a href="index.html" class="logout">Logout</a>
+</div>
+<div class="container">
+    <div class="box">
+        <img src="https://c.ndtvimg.com/2023-04/80oe61so_pm-flags-off-keralas-first-vande-bharat-express-pti-650_650x400_25_April_23.jpg" alt="Train 1">
+        <h2>Train 1</h2>
+        <p>Express train connecting major cities.</p>
+        <button> <a  href="about.html ">ABOUT</a></button>
+    </div>
+    <div class="box">
+        <img src="https://miro.medium.com/v2/resize:fit:1400/0*kumghvvw53_Y1Hk8.jpg" alt="Train 2">
+        <h2>Train 2</h2>
+        <p>Luxury train with modern amenities.</p>
+    </div>
+    <div class="box">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230821185604/Vande-Bharat-Express.webp" alt="Train 3">
+        <h2>Train 3</h2>
+        <p>High-speed train for quick travels.</p>
+    </div>
+    <div class="box">
+        <img src="https://static2.tripoto.com/media/filter/tst/img/OgData/1624352076_maxresdefault_fotor.jpg" alt="Train 4">
+        <h2>Train 4</h2>
+        <p>Scenic route for tourism.</p>
+    </div>
+</div>
+<div class="nav-links">
+    <button><a href="ticket_registration.html">Ticket Registration</a></button>
+</div>
+
+</body>
+</html>

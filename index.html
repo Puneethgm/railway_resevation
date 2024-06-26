@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Department Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://etimg.etb2bimg.com/photo/108614944.cms');
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            color: white;
+        }
+        h1 {
+            margin-top: 20px;
+            font-size: 32px;
+            text-align: center;
+            width: 100%;
+        }
+        .container {
+            background-color:black;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .container h2 {
+            margin-bottom: 20px;
+        }
+        .container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .container input[type="email"], 
+        .container input[type="password"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .container input[type="checkbox"] {
+            margin: 10px 0;
+        }
+        .container button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .container button:hover {
+            background-color: #45a049;
+        }
+        .container .register-link {
+            margin-top: 15px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>THE INDIAN RAILWAYS</h1>
+
+<div class="container" id="login-container">
+    <h2>Login</h2>
+    <form id="login-form" action="home.html" onsubmit="return validateLoginForm()">
+        <input type="email" id="login-email" placeholder="Email ID" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <div id="login-error" class="error"></div>
+        <label>
+            <input type="checkbox" required> I agree to the terms and conditions
+        </label>
+        <button type="submit">Login</button>
+    </form>
+    <div class="register-link">
+        New user? <a href="#" onclick="showRegisterForm()">Register here</a>
+    </div>
+</div>
+
+<div class="container" id="register-container" style="display: none;">
+    <h2>Register</h2>
+    <form id="register-form" action="home.html" onsubmit="return validateRegisterForm()">
+        <input type="text" id="register-name" placeholder="Name" required>
+        <input type="email" id="register-email" placeholder="Email ID" required>
+        <div style="display: flex; justify-content: space-between;">
+            <select id="register-gender" required style="margin-right: 10px;">
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="text" id="register-phone" placeholder="Phone Number" required>
+        </div>
+        <input type="password" id="register-password" placeholder="New Password" required>
+        <div id="register-error" class="error"></div>
+        <button type="submit">Register</button>
+    </form>
+    <div class="register-link">
+        Already registered? <a href="#" onclick="showLoginForm()">Login here</a>
+    </div>
+</div>
+
+<script>
+    function showRegisterForm() {
+        document.getElementById('login-container').style.display = 'none';
+        document.getElementById('register-container').style.display = 'block';
+    }
+
+    function showLoginForm() {
+        document.getElementById('register-container').style.display = 'none';
+        document.getElementById('login-container').style.display = 'block';
+    }
+
+    function validateLoginForm() {
+        const password = document.getElementById('login-password').value;
+        const errorDiv = document.getElementById('login-error');
+        const regex = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?`~-])[A-Za-z0-9!@#$%^&*()_+[\]{};':"\\|,.<>/?`~-]{6,}$/;
+        if (!regex.test(password)) {
+            errorDiv.textContent = 'Password must be at least 6 characters long and include a special character, a number, and an alphabet.';
+            return false;
+        }
+        return true;
+    }
+
+    function validateRegisterForm() {
+        const password = document.getElementById('register-password').value;
+        const errorDiv = document.getElementById('register-error');
+        const regex = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?`~-])[A-Za-z0-9!@#$%^&*()_+[\]{};':"\\|,.<>/?`~-]{6,}$/;
+        if (!regex.test(password)) {
+            errorDiv.textContent = 'Password must be at least 6 characters long and include a special character, a number, and an alphabet.';
+            return false;
+        }
+        return true;
+    }
+</script>
+
+</body>
+</html>

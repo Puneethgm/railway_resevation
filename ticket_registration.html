@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('railway.jpg');
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        .container h2 {
+            margin-bottom: 20px;
+        }
+        .container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .container input[type="text"],
+        .container input[type="date"],
+        .container select,
+        .container input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .container button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .container button:hover {
+            background-color: #45a049;
+        }
+        .success-message {
+            display: none;
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Ticket Registration</h2>
+    <form id="ticket-form" onsubmit="return handleTicketSubmission(event)">
+        <input type="text" placeholder="Name" required>
+        <input type="text" placeholder="Destination" required>
+        <input type="date" required>
+        <select required>
+            <option value="">Select Class</option>
+            <option value="first">First Class</option>
+            <option value="second">Second Class</option>
+            <option value="third">Third Class</option>
+        </select>
+        <input type="number" placeholder="Number of Seats" required>
+        <button type="submit">Register Ticket</button>
+    </form>
+    <div class="success-message" id="success-message">
+        Your registration is successful. Thank you!
+    </div>
+</div>
+
+<script>
+    function handleTicketSubmission(event) {
+        event.preventDefault();
+        document.getElementById('ticket-form').style.display = 'none';
+        document.getElementById('success-message').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
